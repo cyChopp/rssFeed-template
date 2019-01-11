@@ -1,0 +1,270 @@
+/*-----------------------
+ MAIN STYLES
+------------------------- */
+
+*,*:before,*:after{
+	box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family:'Quicksand', sans-serif;
+	background: rgb(25, 19, 50);
+	height: 100%;
+	overflow: hidden;
+}
+ul{
+	padding-left: 0;
+	color: white;
+}
+a{
+	padding-left: 20px;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	display: block;
+}
+
+p{
+	padding: 0;
+	margin: 0;
+}
+img{
+	margin: 0;
+	padding: 0;
+}
+/* ----------------------
+SIDE NAVIGATION
+------------------------- */
+ul li{
+	padding:10px 15px;
+	list-style-type: none;
+	width: 100%;
+
+}
+
+ul li:hover{
+	background-color: rgba(0,0,0,0.3);
+	cursor: pointer;
+
+}
+
+ul li .fa-arrow-down{
+	float: right;
+	padding-right: 10px;
+	font-size: 15px;
+	vertical-align: center;
+}
+
+.boards{
+	padding: 40px 0px;
+}
+.navWrapper{
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 250px;
+	background: rgb(25, 19, 50);
+	transition:  width 1s;
+}
+
+.navClose{
+	width: 0px;
+}
+
+.btn{
+	/*position: absolute;
+	top:0;*/
+	float: left;
+	margin: 0;
+	font-size: 20px;
+	max-height: 50px;
+	min-height: 50px;
+	color: white;
+	border: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+}
+.collapse{
+	cursor: pointer;
+}
+.collapse::after{
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f106";
+	float: right;
+	padding-right: 10px;
+	vertical-align: center;
+}
+.collapseB::after{
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f107";
+	float: right;
+	padding-right: 10px;
+	vertical-align: center;
+}
+
+.collapseNav{
+	min-height: 0px;
+	display: none;
+}
+
+.collapseNav > *::before{
+	 font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f105";
+	 float: left;
+}
+
+.collapseClose{
+	display: block;
+	min-height: 100px;
+	transition: min-height 1s;
+}
+
+/*----------------------
+ MAIN CONTENT
+ ----------------------*/
+
+.mainContent{
+    background: linear-gradient(90deg, #4143f4, #a442f4);
+	animation: Gradient 11s ease infinite;
+	background-size: 400% 400%;
+
+	transition: left 1s; 
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	width: 100vw;
+	overflow: scroll;
+}
+
+.feedColumn{
+	display: flex;
+}
+
+.flexArticle{
+	padding: 0 20px ;
+	flex: 2;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100%;
+}
+
+/*----------------------
+ HEADER
+ -----------------------*/
+
+.headerSearch{
+	margin: 0;
+	width: 100%;
+	max-height: 50px;
+	min-height: 50px;
+	background-color: rgba(0,0,0,0.3);
+	}
+
+/*----------------------
+ FEEDS CONTENT
+ -----------------------*/
+.paddingBetweenColumn {
+	height: 100%;
+	margin:0;
+	border-bottom: 1px solid rgba(249, 249, 250 ,0.2);
+}
+
+.feedsWrapper{
+	position: absolute;
+	flex:1;
+	right: 0;
+	width: 100%;
+	height: 93%;
+	color: white;
+	overflow:scroll;
+}
+
+.feedContent{
+	height: 100%;
+	width: 60% ;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0,0,0,0.1);
+}
+
+.feedColumn{
+	display: flex;
+	padding-bottom: 0px;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+    transition: font-size 0.7s cubic-bezier(0.6,-0.20, 0.7,-0.11),
+        		flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+      			background 0.2s;
+}
+
+.feedColumn.open{
+	 flex: 5;
+     font-size: 25px;
+}
+.feedColumn.open >p{
+	 flex: 5;
+     font-size: 25px;
+}
+
+.feedColumn > *{
+	transition: transform 0.5s;
+}
+
+.Article{
+	margin-right: 15px;
+	float: right;
+	text-align: justify;
+}
+
+
+
+/*--------------------------------
+ 		LINEAL-GRADIENT 
+ ---------------------------------*/
+
+ @-webkit-keyframes AnimationName {
+    0%{
+    	background-position:50% 0%;
+    }
+    50%{
+    	background-position:50% 100%;
+    }
+    100%{
+    	background-position:50% 0%;
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0%{
+    	background-position:50% 0%;
+    }
+    50%{
+    	background-position:50% 100%;
+    }
+    100%{
+    	background-position:50% 0%;
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
